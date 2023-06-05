@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/", to: "facts#index"
+  get "/facts", to: "facts#index"
+  post "/text", to: "twilio#create"
 end

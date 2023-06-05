@@ -1,0 +1,30 @@
+<div class="header">
+  <div>
+    <h1>Fun Facts about the legendary musical group </h1>
+  </div>
+  <div>
+    <h1 class="band-name"> CHUMBAWAMBA!</h1>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="fun-facts">
+    <%= image_tag("chumbawamba.jpeg", width: 500) %>
+
+    <p>Harder-to-find audio files are available <%= link_to "here", "http://www.chumba.com/downloads.html" %>.</p>
+
+    <h2>Did you know?</h3>
+    <p><%= @fact %></p>
+
+
+    <div class="fun-fact-form">
+      <h3>Send this fun   fact as a text message:</h3>
+      <%= form_with url: "/text", local: true, method: :post do |form| %>
+        <%= form.text_field :name, size: 22, placeholder: "Who is sending this text?" %><br>
+        <%= form.hidden_field :fact, size: 22, value: @fact %><br>
+
+        <%= form.submit "Send" %>
+      <% end %>
+    </div>
+  </div>
+</div>
