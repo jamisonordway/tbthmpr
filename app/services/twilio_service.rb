@@ -5,12 +5,11 @@ class TwilioService
     client = Twilio::REST::Client.new(
       ENV["TWILIO_ACCOUNT_SID"],
       ENV["TWILIO_AUTH_TOKEN"]
-      )
-      from = "+18666981954"
-      to = ENV["RECIPIENT_PHONE_NUMBER"]
-      require 'pry'; binding.pry
+    )
+    from = "+18666981954"
+    to = ENV["RECIPIENT_PHONE_NUMBER"]
 
-    # sleep(10) # mimic an time-expensive operation
+    sleep(5) # mimic an time-expensive operation
 
     client.messages.create(
       from: from,
