@@ -15,5 +15,5 @@ You will need a Twilio developer account to use this application. [Sign up here]
 
 ## Feature Requests
 
-- `TwilioService::send_text` is slow (`sleep(10)` was intentionally added to simulate an expensive operation). We should move this to a background job.
+- `TwilioService::send_text` is slow (`sleep(5)` was intentionally added to simulate an expensive operation). We should move this to a background job.
   * Try using [Sidekiq](https://github.com/sidekiq/sidekiq) and [Redis](https://redis.io/docs/).  
